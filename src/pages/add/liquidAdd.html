@@ -1,0 +1,59 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        Add liquid
+      </ion-title>
+    </ion-navbar>
+</ion-header>
+  
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>Nombre</ion-card-header>
+    <ion-card-content>
+        <ion-input type="text"></ion-input>
+    </ion-card-content>    
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>Composición</ion-card-header>
+    <ion-card-content>
+        <ion-label>Nicotina</ion-label>
+        <ion-select id="1"><!-- [(ngModel)]="nicotina.mg0" name="nicotina.mg0" -->
+            <ion-option value="mg0">0 mg</ion-option>
+            <ion-option value="mg1">1.5 mg</ion-option>
+            <ion-option value="mg3">3 mg</ion-option>
+        </ion-select>
+        <ion-label>Base</ion-label>
+        <ion-select  id="2">
+            <ion-option value="p70">70/30 %</ion-option>
+            <ion-option value="p80">80/20 %</ion-option>
+            <ion-option value="p90">90/10 %</ion-option>
+        </ion-select>
+        <ion-label>Aroma</ion-label>
+        <ion-select id="3">
+            <ion-option value="1">Red Astaire</ion-option>
+            <ion-option value="2">Leviathan</ion-option>
+            <ion-option value="3">Oni</ion-option>
+        </ion-select>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+      <ion-card-content>
+          <ion-label>Proporción aroma(%)</ion-label>
+          <ion-input type="number"></ion-input>
+
+          <ion-label>Cantidad (ml)</ion-label>
+          <ion-input type="number"></ion-input>
+      </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+      <ion-card-header>Fecha creación</ion-card-header>
+      <ion-card-content>
+      <!-- <ion-datetime displayFormat="DD MMM YYYY" pickerFormat="DD MMM YYYY" [(ngModel)]="event.month"></ion-datetime> -->
+      </ion-card-content>
+  </ion-card>
+
+  <button ion-button>Guardar</button>
+</ion-content>

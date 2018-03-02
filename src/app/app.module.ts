@@ -5,12 +5,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { AddPage } from '../pages/add/liquidAdd';
+import { ListPage } from '../pages/list/liquidList';
+import { TabsPage } from '../pages/tabs/tabs';
+import { LiquidoService } from '../providers/liquido-service';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    AddPage,
+    ListPage,
+    TabsPage
   ],
   imports: [
     BrowserModule,
@@ -19,11 +24,14 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    AddPage,
+    ListPage,
+    TabsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    LiquidoService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
