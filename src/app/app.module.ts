@@ -8,7 +8,8 @@ import { MyApp } from './app.component';
 import { AddPage } from '../pages/add/liquidAdd';
 import { ListPage } from '../pages/list/liquidList';
 import { TabsPage } from '../pages/tabs/tabs';
-import { LiquidoService } from '../providers/liquido-service';
+import { LiquidoService } from '../providers/liquido.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LiquidoService } from '../providers/liquido-service';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

@@ -8,4 +8,10 @@
   
   <ion-content padding>
     Liquids list
+    <ion-list>
+      <h2>{{liquidos}}</h2>
+      <template *ngFor="let liquido of liquidos|async">
+        <h2>{{liquido.name}}</h2>
+      </template>
+    </ion-list>
   </ion-content>
