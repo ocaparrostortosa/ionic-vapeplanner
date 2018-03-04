@@ -10,7 +10,7 @@
   <ion-card>
     <ion-card-header>Nombre</ion-card-header>
     <ion-card-content>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" [(ngModel)]="nombreLiquido" value="NombreEj"></ion-input>
     </ion-card-content>    
   </ion-card>
 
@@ -18,19 +18,19 @@
     <ion-card-header>Composición</ion-card-header>
     <ion-card-content>
         <ion-label>Nicotina</ion-label>
-        <ion-select id="1"><!-- [(ngModel)]="nicotina.mg0" name="nicotina.mg0" -->
-            <ion-option value="mg0">0 mg</ion-option>
-            <ion-option value="mg1">1.5 mg</ion-option>
-            <ion-option value="mg3">3 mg</ion-option>
+        <ion-select id="1" value="0" [(ngModel)]="nicotinaLiquido"><!-- [(ngModel)]="nicotina.mg0" name="nicotina.mg0" -->
+            <ion-option value="0">0 mg</ion-option>
+            <ion-option value="1">1.5 mg</ion-option>
+            <ion-option value="3">3 mg</ion-option>
         </ion-select>
         <ion-label>Base</ion-label>
-        <ion-select  id="2">
-            <ion-option value="p70">70/30 %</ion-option>
-            <ion-option value="p80">80/20 %</ion-option>
-            <ion-option value="p90">90/10 %</ion-option>
+        <ion-select  id="2" value="70" [(ngModel)]="baseLiquido">
+            <ion-option value="70">70/30 %</ion-option>
+            <ion-option value="80">80/20 %</ion-option>
+            <ion-option value="90">90/10 %</ion-option>
         </ion-select>
         <ion-label>Aroma</ion-label>
-        <ion-select id="3">
+        <ion-select id="3" value="1" [(ngModel)]="aromaLiquido">
             <ion-option value="1">Red Astaire</ion-option>
             <ion-option value="2">Leviathan</ion-option>
             <ion-option value="3">Oni</ion-option>
@@ -41,10 +41,10 @@
   <ion-card>
       <ion-card-content>
           <ion-label>Proporción aroma(%)</ion-label>
-          <ion-input type="number"></ion-input>
+          <ion-input type="number" value="10" [(ngModel)]="porcentajeLiquido"></ion-input>
 
           <ion-label>Cantidad (ml)</ion-label>
-          <ion-input type="number"></ion-input>
+          <ion-input type="number" value="100" [(ngModel)]="cantidadLiquido"></ion-input>
       </ion-card-content>
   </ion-card>
 

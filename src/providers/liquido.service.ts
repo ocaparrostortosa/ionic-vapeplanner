@@ -24,6 +24,7 @@ export class LiquidoService {
   }
 
   cargaLiquidos() {
+    this.configUrl = 'http://localhost:3000/liquidos';
     this.liquidos = this.http.get<Liquido[]>(this.configUrl);
   }
    
@@ -34,6 +35,13 @@ export class LiquidoService {
   addLiquido(liquido:Liquido){
     console.log("Posted.");
     this.http.post<Liquido>(this.configUrl, liquido).subscribe(data => {console.log(data)});
+  }
+
+  deleteLiquido(id:number){
+    console.log('Eliminando liquido ' + id);
+    this.configUrl = this.configUrl + "/" + id;
+    this.http.delete(this.configUrl, this.httpOptions).subscribe();
+    this.cargaLiquidos();
   }
 
 }

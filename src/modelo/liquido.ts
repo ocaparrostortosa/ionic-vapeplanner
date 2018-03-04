@@ -1,5 +1,5 @@
 export class Liquido{
-    _id            : Number;
+    id            : Number;
     user_id        : String;
     base           : Number;
     flavour        : Number;

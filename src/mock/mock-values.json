@@ -1,10 +1,11 @@
 {
-  "liquidos":[
+  "liquidos": [
     {
+      "id": 179,
       "creation_date": "2018-02-15T00:00:00.000Z",
-      "_id": 1793009781,
+      "user_id": 12,
       "base": 20,
-      "description": "",
+      "description": "Description",
       "favourite": false,
       "flavour": 13,
       "flavourProp": 12,
@@ -12,23 +13,28 @@
       "name": "Holo",
       "nicotine": 3,
       "quantity": 36,
-      "state": true,
-      "__v": 0
+      "state": true
     },
     {
+      "id": 175,
       "creation_date": "2018-02-14T00:00:00.000Z",
-      "_id": 1792984462,
+      "user_id": 12,
       "base": 23,
       "description": "",
       "favourite": false,
       "flavour": 10,
       "flavourProp": 12,
       "maceration": 0,
-      "name": "Ainge",
+      "name": "Leviathan",
       "nicotine": 3,
       "quantity": 36,
-      "state": true,
-      "__v": 0
+      "state": true
+    },
+    {
+      "name": "NombreEj",
+      "flavourProp": "10",
+      "quantity": "100",
+      "id": 183
     }
-  ] 
+  ]
 }

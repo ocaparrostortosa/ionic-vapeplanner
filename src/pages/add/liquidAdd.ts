@@ -9,6 +9,13 @@ import { Liquido } from '../../modelo/liquido';
 })
 export class AddPage {
 
+  public nombreLiquido:string;
+  public nicotinaLiquido:number;
+  public baseLiquido:number;
+  public aromaLiquido:number;
+  public porcentajeLiquido:number;
+  public cantidadLiquido:number;
+
   constructor(public navCtrl: NavController, private liquidoService:LiquidoService) {
 
   }
@@ -19,7 +26,12 @@ export class AddPage {
 
   public postLiquid(){
     let liquido:Liquido = new Liquido();//123,"id",23,10,16,false,3,"Name",3,25,true,"",2
-    liquido.name = "Nombre";
+    liquido.name = this.nombreLiquido;
+    liquido.nicotine = this.nicotinaLiquido;
+    liquido.base = this.baseLiquido;
+    liquido.flavour = this.aromaLiquido;
+    liquido.flavourProp = this.porcentajeLiquido;
+    liquido.quantity = this.cantidadLiquido;
     this.liquidoService.addLiquido(liquido);
   }
 

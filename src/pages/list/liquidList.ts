@@ -15,4 +15,14 @@ export class ListPage {
     this.liquidos = this.liquidoService.getLiquidos();
   }
 
+  public actualizarLiquido(liquido:Liquido){
+    console.log("Actualizando liquido con id: " + liquido.id);
+    //this.liquidoService.updateLiquido();
+  }
+
+  public eliminarLiquido(id:number){
+    console.log("Eliminando liquido con id: " + id);
+    this.liquidoService.deleteLiquido(id);
+  }
+
 }
