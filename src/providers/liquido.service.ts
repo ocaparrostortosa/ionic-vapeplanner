@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Rx';
+import { Observable, Subscription, Subscriber } from 'rxjs/Rx';
 import 'rxjs/add/observable/from';
 import { Liquido } from '../modelo/liquido';
 import { map } from 'rxjs/operators';
@@ -20,10 +20,6 @@ export class LiquidoService {
 
   constructor(public http: HttpClient) {
     console.log('LiquidoService Provider');
-    this.cargaLiquidos();
-  }
-
-  cargaLiquidos() {
     this.configUrl = 'http://localhost:3000/liquidos';
     this.liquidos = this.http.get<Liquido[]>(this.configUrl);
   }
@@ -37,11 +33,10 @@ export class LiquidoService {
     this.http.post<Liquido>(this.configUrl, liquido).subscribe(data => {console.log(data)});
   }
 
-  deleteLiquido(id:number){
+  deleteLiquido(id:number):Subscription{
     console.log('Eliminando liquido ' + id);
     this.configUrl = this.configUrl + "/" + id;
-    this.http.delete(this.configUrl, this.httpOptions).subscribe();
-    this.cargaLiquidos();
+    return this.http.delete(this.configUrl, this.httpOptions).subscribe();
   }
 
 }
