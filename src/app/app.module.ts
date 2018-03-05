@@ -10,13 +10,15 @@ import { ListPage } from '../pages/list/liquidList';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LiquidoService } from '../providers/liquido.service';
 import { HttpClientModule } from '@angular/common/http';
+import { UpdatePage } from '../pages/update/update';
 
 @NgModule({
   declarations: [
     MyApp,
     AddPage,
     ListPage,
-    TabsPage
+    TabsPage,
+    UpdatePage
   ],
   imports: [
     BrowserModule,
@@ -28,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
     MyApp,
     AddPage,
     ListPage,
-    TabsPage
+    TabsPage,
+    UpdatePage
   ],
   providers: [
     StatusBar,

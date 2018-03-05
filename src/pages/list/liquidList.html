@@ -1,7 +1,7 @@
 <ion-header>
     <ion-navbar>
       <ion-title>
-        Liquids list
+        VapePlanner
       </ion-title>
     </ion-navbar>
   </ion-header>
@@ -10,7 +10,8 @@
     <ion-list>
         <ion-item *ngFor="let liquido of liquidos|async">
             <h2>{{liquido.name}}</h2>
-            <p> Aroma: {{liquido.flavour}}</p>
+            <p> Nicotina: {{liquido.nicotine}} mg</p>
+            <p> Cantidad: {{liquido.quantity}}</p>
             <p> Creación: {{liquido.creation_date}}</p>
             <button ion-button item-end color="secondary" (click)="actualizarLiquido(liquido)">Actualizar</button>
             <button ion-button item-end color="danger" (click)="eliminarLiquido(liquido)">Eliminar</button>

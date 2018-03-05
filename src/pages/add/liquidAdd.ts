@@ -16,7 +16,7 @@ export class AddPage {
   public aromaLiquido:number;
   public porcentajeLiquido:number;
   public cantidadLiquido:number;
-  public fecha;
+  public fecha:Date;
   /*
   public date = new Date();
   public day;
@@ -36,7 +36,17 @@ export class AddPage {
     liquido.flavourProp = this.porcentajeLiquido;
     liquido.quantity = this.cantidadLiquido;
     liquido.creation_date = this.fecha;
-    console.log("Liquido: " + liquido.id);
+
+    let dateMilis:Date = new Date();
+    let milis:Number = dateMilis.getMilliseconds();
+
+    liquido._id = milis;
+    liquido.user_id = '5a8404e61f4b9b397c2a8b37';
+    liquido.description = '';
+    liquido.maceration = 3;
+    liquido.state = true;
+    liquido.favourite = false;
+
     this.liquidoService.addLiquido(liquido);
     this.navCtrl.setRoot(ListPage);        
   }

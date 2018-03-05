@@ -1,7 +1,7 @@
 <ion-header>
     <ion-navbar>
       <ion-title>
-        Add liquid
+        Update liquid
       </ion-title>
     </ion-navbar>
 </ion-header>
@@ -10,7 +10,7 @@
   <ion-card>
     <ion-card-header>Nombre</ion-card-header>
     <ion-card-content>
-        <ion-input type="text" [(ngModel)]="nombreLiquido" placeholder="Nombre del liquido"></ion-input>
+        <ion-input type="text" [(ngModel)]="nombreLiquido" placeholder="Nombre del liquid"></ion-input>
     </ion-card-content>    
   </ion-card>
 
@@ -56,13 +56,5 @@
       </ion-card-content>
   </ion-card>
 
-  <ion-card>
-      <ion-card-header>Fecha creación</ion-card-header>
-      <ion-card-content>
-          <ion-item>
-            <ion-datetime displayFormat="DD MMM YYYY" pickerFormat="DD MMM YYYY" placeholder="Seleccione fecha" [(ngModel)]="fecha"></ion-datetime>
-          </ion-item>
-      </ion-card-content>
-  </ion-card>
-  <button ion-button (click)="postLiquid()">Guardar</button>
+  <button ion-button (click)="updateLiquid()">Actualizar</button>
 </ion-content>
