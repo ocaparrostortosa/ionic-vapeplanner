@@ -38,8 +38,7 @@ export class AddPage {
     liquido.creation_date = this.fecha;
     console.log("Liquido: " + liquido.id);
     this.liquidoService.addLiquido(liquido);
-    this.navCtrl.setRoot(ListPage);
-        
+    this.navCtrl.setRoot(ListPage);        
   }
 
 }

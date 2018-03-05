@@ -44,9 +44,14 @@
       "id": 190
     },
     {
-      "name": "qwer",
+      "name": "Liquido",
       "nicotine": "0",
-      "id": 191
+      "base": "80",
+      "flavour": "3",
+      "flavourProp": "25",
+      "quantity": "190",
+      "creation_date": "2018-03-06",
+      "id": 192
     }
   ]
 }
