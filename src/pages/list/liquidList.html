@@ -11,8 +11,9 @@
         <ion-item *ngFor="let liquido of liquidos|async">
             <h2>{{liquido.name}}</h2>
             <p> Aroma: {{liquido.flavour}}</p>
+            <p> Creación: {{liquido.creation_date}}</p>
             <button ion-button item-end color="secondary" (click)="actualizarLiquido(liquido)">Actualizar</button>
-            <button ion-button item-end color="danger" (click)="eliminarLiquido(liquido.id)">Eliminar</button>
+            <button ion-button item-end color="danger" (click)="eliminarLiquido(liquido)">Eliminar</button>
         </ion-item>
       <!--
       <h2>{{liquidos}}</h2>

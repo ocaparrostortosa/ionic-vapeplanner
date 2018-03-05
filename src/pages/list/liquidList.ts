@@ -20,9 +20,9 @@ export class ListPage {
     //this.liquidoService.updateLiquido();
   }
 
-  public eliminarLiquido(id:number){
-    console.log("Eliminando liquido con id: " + id);
-    this.liquidoService.deleteLiquido(id);
+  public eliminarLiquido(liquido:Liquido){
+    console.log("Eliminando liquido con id: " + liquido.id);
+    this.liquidos = this.liquidoService.deleteLiquido(liquido);
     /**
     this.liquidoService.deleteLiquido(id).add(
       function(data, err){

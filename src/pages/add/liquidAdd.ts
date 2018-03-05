@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { LiquidoService } from '../../providers/liquido.service';
 import { Liquido } from '../../modelo/liquido';
+import { ListPage } from '../list/liquidList';
 
 @Component({
   selector: 'page-add',
@@ -15,14 +16,16 @@ export class AddPage {
   public aromaLiquido:number;
   public porcentajeLiquido:number;
   public cantidadLiquido:number;
+  public fecha;
+  /*
+  public date = new Date();
+  public day;
+  public month;
+  public event;*/
 
   constructor(public navCtrl: NavController, private liquidoService:LiquidoService) {
-
-  }
-
-  public event = {
-    month: '1990-02-20'
-  }
+    /**this.event = this.date.getFullYear()+"-"+this.date.getUTCMonth()+"-"+this.date.getDate();*/
+  }  
 
   public postLiquid(){
     let liquido:Liquido = new Liquido();//123,"id",23,10,16,false,3,"Name",3,25,true,"",2
@@ -32,7 +35,10 @@ export class AddPage {
     liquido.flavour = this.aromaLiquido;
     liquido.flavourProp = this.porcentajeLiquido;
     liquido.quantity = this.cantidadLiquido;
+    liquido.creation_date = this.fecha;
+    console.log("Liquido: " + liquido);
     this.liquidoService.addLiquido(liquido);
+    this.navCtrl.setRoot(ListPage);
   }
 
 }

@@ -29,14 +29,45 @@ export class LiquidoService {
   }
 
   addLiquido(liquido:Liquido){
-    console.log("Posted.");
     this.http.post<Liquido>(this.configUrl, liquido).subscribe(data => {console.log(data)});
+    this.liquidos.pipe(
+      map(liquidos => liquidos.filter(l=> {
+        if (l.id == liquido.id) {
+          return true;
+        } return true;
+      }
+      ))
+    );
   }
 
-  deleteLiquido(id:number):Subscription{
-    console.log('Eliminando liquido ' + id);
-    this.configUrl = this.configUrl + "/" + id;
-    return this.http.delete(this.configUrl, this.httpOptions).subscribe();
+  deleteLiquido(liquido:Liquido) : Observable<Liquido[]>{
+    console.log('Eliminando liquido ' + liquido.id);
+    this.configUrl = 'http://localhost:3000/liquidos';
+    this.configUrl = this.configUrl + "/" + liquido.id;
+    this.http.delete(this.configUrl, this.httpOptions).subscribe();
+
+    return this.liquidos.pipe(
+        map(liquidos => liquidos.filter(l=> {
+          if (l.id == liquido.id) {
+            return false;
+          } return true;
+        }
+        ))
+      );
+    /*
+    this.liquidos.subscribe( liquidos => {
+      liquidos.forEach(element => {
+        if(element.id === liquido.id){
+          let index:number = liquidos.indexOf(element);
+          console.log("Index " + index + ":" + liquido.id);
+          if(index >= 0){
+            console.log("Has entrado");
+            liquidos.splice(index, 1);
+          }
+        }
+      });      
+    });*/
+
   }
 
 }

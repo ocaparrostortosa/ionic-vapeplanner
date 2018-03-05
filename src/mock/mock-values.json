@@ -16,34 +16,32 @@
       "state": true
     },
     {
-      "id": 165,
-      "creation_date": "2018-02-14T00:00:00.000Z",
-      "user_id": 12,
-      "base": 23,
-      "description": "",
-      "favourite": false,
-      "flavour": 10,
-      "flavourProp": 12,
-      "maceration": 0,
-      "name": "Leviathan",
-      "nicotine": 3,
-      "quantity": 36,
-      "state": true
+      "name": "Liquido",
+      "nicotine": "0",
+      "base": "80",
+      "flavour": "3",
+      "flavourProp": "20",
+      "quantity": "200",
+      "id": 188
     },
     {
-      "id": 132,
-      "creation_date": "2018-02-14T00:00:00.000Z",
-      "user_id": 12,
-      "base": 23,
-      "description": "",
-      "favourite": false,
-      "flavour": 10,
-      "flavourProp": 12,
-      "maceration": 0,
-      "name": "Leviathan",
-      "nicotine": 3,
-      "quantity": 36,
-      "state": true
+      "name": "Name",
+      "nicotine": "1",
+      "base": "80",
+      "flavour": "2",
+      "flavourProp": "23",
+      "quantity": "123",
+      "id": 189
+    },
+    {
+      "name": "asdf",
+      "nicotine": "3",
+      "base": "90",
+      "flavour": "3",
+      "flavourProp": "69",
+      "quantity": "690",
+      "creation_date": "2018-03-05",
+      "id": 190
     }
   ]
 }
