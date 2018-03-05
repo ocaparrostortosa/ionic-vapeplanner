@@ -4,6 +4,8 @@ import { Observable, Subscription, Subscriber } from 'rxjs/Rx';
 import 'rxjs/add/observable/from';
 import { Liquido } from '../modelo/liquido';
 import { map } from 'rxjs/operators';
+import { Page } from 'ionic-angular/navigation/nav-util';
+import { ListPage } from '../pages/list/liquidList';
 
 @Injectable()
 export class LiquidoService {
@@ -29,7 +31,7 @@ export class LiquidoService {
   }
 
   addLiquido(liquido:Liquido){
-    this.http.post<Liquido>(this.configUrl, liquido).subscribe(data => {console.log(data)});
+    this.http.post<Liquido>(this.configUrl, liquido).subscribe();
     this.liquidos.pipe(
       map(liquidos => liquidos.filter(l=> {
         if (l.id == liquido.id) {

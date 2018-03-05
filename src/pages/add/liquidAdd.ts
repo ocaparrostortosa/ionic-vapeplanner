@@ -36,9 +36,10 @@ export class AddPage {
     liquido.flavourProp = this.porcentajeLiquido;
     liquido.quantity = this.cantidadLiquido;
     liquido.creation_date = this.fecha;
-    console.log("Liquido: " + liquido);
+    console.log("Liquido: " + liquido.id);
     this.liquidoService.addLiquido(liquido);
     this.navCtrl.setRoot(ListPage);
+        
   }
 
 }

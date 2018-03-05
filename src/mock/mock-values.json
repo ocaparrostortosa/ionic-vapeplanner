@@ -42,6 +42,11 @@
       "quantity": "690",
       "creation_date": "2018-03-05",
       "id": 190
+    },
+    {
+      "name": "qwer",
+      "nicotine": "0",
+      "id": 191
     }
   ]
 }
