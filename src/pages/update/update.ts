@@ -35,6 +35,7 @@ export class UpdatePage {
     this.liquido.flavourProp = this.porcentajeLiquido;
     this.liquido.quantity = this.cantidadLiquido;
 
+    console.log(this.liquido);
     this.service.updateLiquido(this.liquido);
   }
 

@@ -12,7 +12,7 @@ export class LiquidoService {
   
   private liquidos:Observable<Liquido[]>;
   
-  private configUrl: string = 'http://localhost:8100/liquids';//'http://ec2-52-47-163-224.eu-west-3.compute.amazonaws.com:8080/liquids';
+  private configUrl: string = 'http://ec2-52-47-163-224.eu-west-3.compute.amazonaws.com:8080/liquids';
 
   private httpOptions = {
     headers: new HttpHeaders({
@@ -23,8 +23,10 @@ export class LiquidoService {
 
   constructor(public http: HttpClient) {
     console.log('LiquidoService Provider');
-    this.configUrl = 'http://localhost:8100/liquids';
+    this.configUrl = 'http://ec2-52-47-163-224.eu-west-3.compute.amazonaws.com:8080/liquids';
     this.liquidos = this.http.get<Liquido[]>(this.configUrl, this.httpOptions);
+
+
   }
    
   getLiquidos() : Observable<Liquido[]>{
@@ -45,7 +47,7 @@ export class LiquidoService {
 
   deleteLiquido(liquido:Liquido) : Observable<Liquido[]>{
     console.log('Eliminando liquido ' + liquido._id);
-    this.configUrl = 'http://localhost:8100/liquids';
+    this.configUrl = 'http://ec2-52-47-163-224.eu-west-3.compute.amazonaws.com:8080/liquids';
     this.configUrl = this.configUrl + "/" + liquido._id;
     this.http.delete(this.configUrl, this.httpOptions).subscribe();
 
@@ -61,9 +63,9 @@ export class LiquidoService {
 
   updateLiquido(liquido:Liquido){
     console.log(liquido);
-    this.configUrl = 'http://localhost:8100/liquids/' + liquido._id;
+    this.configUrl = 'http://ec2-52-47-163-224.eu-west-3.compute.amazonaws.com:8080/liquids/' + liquido._id;
     this.http.put<Liquido>(this.configUrl, liquido, this.httpOptions).subscribe();
-    /**
+    
     return this.liquidos.pipe(
       map(liquidos => liquidos.filter(l=> {
         if (l._id == liquido._id) {
@@ -71,7 +73,7 @@ export class LiquidoService {
         } return true;
       }
       ))
-    );*/
+    );
   }
 
 }
