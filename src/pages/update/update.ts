@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Liquido } from '../../modelo/liquido';
 import { LiquidoService } from '../../providers/liquido.service';
+import { ListPage } from '../list/liquidList';
 
 @IonicPage()
 @Component({
@@ -35,8 +36,8 @@ export class UpdatePage {
     this.liquido.flavourProp = this.porcentajeLiquido;
     this.liquido.quantity = this.cantidadLiquido;
 
-    console.log(this.liquido);
     this.service.updateLiquido(this.liquido);
+    this.navCtrl.push(ListPage);
   }
 
 }

@@ -6,6 +6,7 @@ import { LiquidoService } from '../../providers/liquido.service';
 import { Aroma } from '../../modelo/aroma';
 import { UpdatePage } from '../update/update';
 import { Dialogs } from '@ionic-native/dialogs';
+import { DetallePage } from '../detalle/detalle';
 
 @Component({
   selector: 'page-list',
@@ -45,6 +46,10 @@ export class ListPage {
     console.log("Eliminando liquido con id: " + liquido._id);
     this.liquidos = this.liquidoService.deleteLiquido(liquido);
     
+  }
+
+  public irADetalle(liquido:Liquido) {
+    this.navCtrl.push(DetallePage, {param2: liquido});
   }
 
 }

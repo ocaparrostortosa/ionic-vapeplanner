@@ -12,6 +12,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { LiquidoService } from '../providers/liquido.service';
 import { HttpClientModule } from '@angular/common/http';
 import { UpdatePage } from '../pages/update/update';
+import { DetallePage } from '../pages/detalle/detalle';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { UpdatePage } from '../pages/update/update';
     AddPage,
     ListPage,
     TabsPage,
-    UpdatePage
+    UpdatePage,
+    DetallePage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import { UpdatePage } from '../pages/update/update';
     AddPage,
     ListPage,
     TabsPage,
-    UpdatePage
+    UpdatePage,
+    DetallePage
   ],
   providers: [
     StatusBar,

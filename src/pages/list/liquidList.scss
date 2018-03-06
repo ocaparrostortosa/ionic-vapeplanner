@@ -5,3 +5,7 @@ $lobster : 'Lobster', sans-serif;
 .vapeplanner-title {
     font-family: $lobster;
 }
+
+.listItem {
+    cursor: pointer;
+}

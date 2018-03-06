@@ -11,18 +11,14 @@
   <ion-content padding>
     <ion-list>
         <ion-item *ngFor="let liquido of liquidos|async">
-            <h2>{{liquido.name}}</h2>
-            <p> Nicotina: {{liquido.nicotine}} mg</p>
-            <p> Cantidad: {{liquido.quantity}}</p>
-            <p> Creación: {{liquido.creation_date}}</p>
+            <div class="listItem" (click)="irADetalle(liquido)">
+              <h2>{{liquido.name}}</h2>
+              <p> Nicotina: {{liquido.nicotine}} mg</p>
+              <p> Cantidad: {{liquido.quantity}}</p>
+              <p> Creación: {{liquido.creation_date}}</p>
+            </div> 
             <button ion-button item-end color="secondary" (click)="actualizarLiquido(liquido)"><ion-icon name="create"></ion-icon></button>
             <button ion-button item-end color="danger" (click)="eliminarLiquido(liquido)"><ion-icon name="trash"></ion-icon></button>
         </ion-item>
-      <!--
-      <h2>{{liquidos}}</h2>
-      <template *ngFor="let liquido of liquidos|async">
-        <h2>{{liquido.name}}</h2>
-      </template>
-    -->
     </ion-list>
   </ion-content>

@@ -1,8 +1,6 @@
 <ion-header>
     <ion-navbar>
-      <ion-title>
-        Añadir líquido
-      </ion-title>
+      <ion-title>Detalle de {{tituloDetalle}}</ion-title>
     </ion-navbar>
 </ion-header>
   
@@ -10,7 +8,7 @@
   <ion-card>
     <ion-card-header>Nombre</ion-card-header>
     <ion-card-content>
-        <ion-input type="text" [(ngModel)]="nombreLiquido" placeholder="Nombre del liquido"></ion-input>
+        <ion-input disabled="true" type="text" [(ngModel)]="nombreLiquido" placeholder="Nombre del liquido"></ion-input>
     </ion-card-content>    
   </ion-card>
 
@@ -20,7 +18,7 @@
     <ion-list>
         <ion-item>
             <ion-label>Nicotina</ion-label>
-            <ion-select id="1" value="0" [(ngModel)]="nicotinaLiquido"><!-- [(ngModel)]="nicotina.mg0" name="nicotina.mg0" -->
+            <ion-select disabled ="true" id="1" value="0" [(ngModel)]="nicotinaLiquido"><!-- [(ngModel)]="nicotina.mg0" name="nicotina.mg0" -->
                 <ion-option value="0">0 mg</ion-option>
                 <ion-option value="1.5">1.5 mg</ion-option>
                 <ion-option value="3">3 mg</ion-option>
@@ -28,7 +26,7 @@
         </ion-item>
         <ion-item>
             <ion-label>Base</ion-label>
-            <ion-select  id="2" value="70" [(ngModel)]="baseLiquido">
+            <ion-select disabled="true" id="2" value="70" [(ngModel)]="baseLiquido">
                 <ion-option value="70">70/30 %</ion-option>
                 <ion-option value="80">80/20 %</ion-option>
                 <ion-option value="90">90/10 %</ion-option>
@@ -36,7 +34,7 @@
         </ion-item>
         <ion-item>
             <ion-label>Aroma</ion-label>
-            <ion-select id="3" value="1" [(ngModel)]="aromaLiquido">
+            <ion-select disabled="true" id="3" value="1" [(ngModel)]="aromaLiquido">
                 <ion-option value="1">Red Astaire</ion-option>
                 <ion-option value="2">Leviathan</ion-option>
                 <ion-option value="3">Oni</ion-option>
@@ -49,10 +47,10 @@
   <ion-card>
       <ion-card-content>
           <ion-label>Proporción aroma(%)</ion-label>
-          <ion-input type="number" placeholder="10" min="0" [(ngModel)]="porcentajeLiquido"></ion-input>
+          <ion-input disabled="true" type="number" placeholder="10" min="0" [(ngModel)]="porcentajeLiquido"></ion-input>
 
           <ion-label>Cantidad (ml)</ion-label>
-          <ion-input type="number" placeholder="100" min="0" [(ngModel)]="cantidadLiquido"></ion-input>
+          <ion-input disabled="true" type="number" placeholder="100" min="0" [(ngModel)]="cantidadLiquido"></ion-input>
       </ion-card-content>
   </ion-card>
 
@@ -60,9 +58,8 @@
       <ion-card-header>Fecha creación</ion-card-header>
       <ion-card-content>
           <ion-item>
-            <ion-datetime displayFormat="DD MMM YYYY" pickerFormat="DD MMM YYYY" placeholder="Seleccione fecha" [(ngModel)]="fecha"></ion-datetime>
+            <ion-datetime disabled="true" displayFormat="DD MMM YYYY" pickerFormat="DD MMM YYYY" placeholder="Seleccione fecha" [(ngModel)]="fecha"></ion-datetime>
           </ion-item>
       </ion-card-content>
   </ion-card>
-  <button ion-button (click)="postLiquid()">Guardar</button>
 </ion-content>
