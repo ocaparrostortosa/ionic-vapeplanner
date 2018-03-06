@@ -15,7 +15,7 @@ export class ListPage {
   liquidos:Observable<Liquido[]>;
   aromas:Aroma[] = new Array();
 
-  constructor(public navCtrl: NavController, private liquidoService:LiquidoService, private dialog:Dialogs) {
+  constructor(public navCtrl: NavController, private liquidoService:LiquidoService, private dialogo:Dialogs) {
     this.liquidos = this.liquidoService.getLiquidos();
     if(this.aromas.length == 0) {
       let red_astaire:Aroma = new Aroma;
@@ -44,12 +44,7 @@ export class ListPage {
   public eliminarLiquido(liquido:Liquido){
     console.log("Eliminando liquido con id: " + liquido._id);
     this.liquidos = this.liquidoService.deleteLiquido(liquido);
-  }
-
-  public mostrarDialogo(){
-    this.dialog.alert('Hello world')
-  .then(() => console.log('Dialog dismissed'))
-  .catch(e => console.log('Error displaying dialog', e));
+    
   }
 
 }
