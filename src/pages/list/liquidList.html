@@ -1,6 +1,8 @@
+<link href="../../assets/css/ionicons.css" rel="stylesheet" type="text/css">
+
 <ion-header>
     <ion-navbar>
-      <ion-title>
+      <ion-title text-center class="vapeplanner-title">
         VapePlanner
       </ion-title>
     </ion-navbar>
@@ -13,8 +15,8 @@
             <p> Nicotina: {{liquido.nicotine}} mg</p>
             <p> Cantidad: {{liquido.quantity}}</p>
             <p> Creación: {{liquido.creation_date}}</p>
-            <button ion-button item-end color="secondary" (click)="actualizarLiquido(liquido)">Actualizar</button>
-            <button ion-button item-end color="danger" (click)="eliminarLiquido(liquido)">Eliminar</button>
+            <button ion-button item-end color="secondary" (click)="actualizarLiquido(liquido)"><ion-icon name="create"></ion-icon></button>
+            <button ion-button item-end color="danger" (click)="eliminarLiquido(liquido)"><ion-icon name="trash"></ion-icon></button>
         </ion-item>
       <!--
       <h2>{{liquidos}}</h2>
