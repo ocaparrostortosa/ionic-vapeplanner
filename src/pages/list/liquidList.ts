@@ -18,6 +18,11 @@ export class ListPage {
 
   constructor(public navCtrl: NavController, private liquidoService:LiquidoService, private dialogo:Dialogs) {
     this.liquidos = this.liquidoService.getLiquidos();
+
+    this.dialogo.alert('Bienvenido a nuestra aplicación')
+    .then(() => console.log('Dialog dismissed'))
+    .catch(e => console.log('Error displaying dialog', e));
+
     if(this.aromas.length == 0) {
       let red_astaire:Aroma = new Aroma;
       red_astaire.id = 1;
