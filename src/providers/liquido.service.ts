@@ -35,14 +35,6 @@ export class LiquidoService {
 
   addLiquido(liquido:Liquido){
     this.http.post<Liquido>(this.configUrl, liquido).subscribe();
-    this.liquidos.pipe(
-      map(liquidos => liquidos.filter(l=> {
-        if (l._id == liquido._id) {
-          return true;
-        } return true;
-      }
-      ))
-    );
   }
 
   deleteLiquido(liquido:Liquido) : Observable<Liquido[]>{
@@ -65,15 +57,6 @@ export class LiquidoService {
     console.log(liquido);
     this.configUrl = 'http://ec2-52-47-163-224.eu-west-3.compute.amazonaws.com:8080/liquids/' + liquido._id;
     this.http.put<Liquido>(this.configUrl, liquido, this.httpOptions).subscribe();
-    
-    return this.liquidos.pipe(
-      map(liquidos => liquidos.filter(l=> {
-        if (l._id == liquido._id) {
-          return false;
-        } return true;
-      }
-      ))
-    );
   }
 
 }
